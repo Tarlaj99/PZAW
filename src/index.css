@@ -68,39 +68,16 @@ body {
 
 h1,
 h2 {
-  font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
 }
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+h1, h2, p {
+  width: 100%;
+  text-align: center;
 }
 p {
+  height: 10vh;
   margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
 }
 
 code {
@@ -110,13 +87,13 @@ code {
   background: var(--code-bg);
 }
 
-main{
-  display: flex;
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-evenly;
-  height: 70vh;
 }
 
-main img{
+.grid img{
   width: 15vw;
   margin: 10px;
 }
@@ -125,11 +102,26 @@ main img{
   background-color: rgb(53, 53, 53);
   margin: 20px;
 }
-main h1{
+.grid h1{
   font-size: 30px;
-  width: 15vw;
+  width: 100%;
   height: 10vh;
 }
-main p{
+.grid p{
   font-size: 20px;
+}
+.grid img{
+  box-shadow: 0 0 50px black;
+}
+.album{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+
+  background-color: #2e303a;
+}
+.album > data{
+  background-color: #656565;
 }
