@@ -66,6 +66,15 @@ body {
   margin: 0;
 }
 
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 h1,
 h2 {
   font-weight: 500;
@@ -124,4 +133,39 @@ code {
 }
 .album > data{
   background-color: #656565;
+}
+.TicTacToe {
+  
+
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+}
+.field {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  border: 2px solid gray;
+}
+
+.field > h1{
+ 
+}
+button {
+  background-image: linear-gradient(rgb(122, 122, 122), rgb(69, 69, 69));
+  border: 1px black;
+  margin-top: 100px;
+  width: 160px;
+  height: 40px;
+  font-size: 30px;
+  transition: all 0.1s;
+}
+button:hover{
+  transform: scale(1.1);
+}
+button:active{
+  transform: scale(1.2);
 }
