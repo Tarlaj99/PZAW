@@ -1,11 +1,18 @@
-import { useState, useEffect,  } from "react";
-import Field from "./Field";
+import { useState } from "react";
+import Field from "./Field.tsx";
+
+function Button({winning_fields, func}){
+    if(winning_fields.length === 3)
+        return(
+            <button onClick={func}>Reset</button>
+        ) 
+}
 export default function TicTacToe(){
     const [symbole, setSymbole] = useState('X');
     const [winning_fields, setWinning_fields] = useState<number[]>([]);
-
     const [Fields, setFields] = useState<string[]>(['','','','','','','','','']);
-
+    const [canPlay, setCanPlay] = useState<boolean>(true);
+    
     function check_up_down(id){
         let second_field;
         let third_field; 
@@ -23,7 +30,7 @@ export default function TicTacToe(){
             third_field = id - 6;
         }
         if(Fields[id] === Fields[second_field] && Fields[second_field] === Fields[third_field]){
-            return [id, second_field, third_field];
+            return [id, second_field, third_field].sort();
         }
         return false;
     }
@@ -44,7 +51,7 @@ export default function TicTacToe(){
             third_field = id - 2;
         }
         if(Fields[id] === Fields[second_field] && Fields[second_field] === Fields[third_field]) {
-            return [id, second_field, third_field];
+            return [id, second_field, third_field].sort();
         }
         return false;
     }
@@ -69,7 +76,7 @@ export default function TicTacToe(){
         }
         
         if(Fields[id] === Fields[second_field]){
-            return [id, second_field, 4];
+            return [id, second_field, 4].sort();
         }
         return false;
     }
@@ -81,9 +88,10 @@ export default function TicTacToe(){
             Fields[i] = '';
         }
         setWinning_fields([]);
+        setCanPlay(true);
     }
     function handleField(field_id: number){
-        if(Fields[field_id] !== '')
+        if(Fields[field_id] !== '' || !canPlay)
             return;
 
         Fields[field_id] = symbole;
@@ -91,12 +99,16 @@ export default function TicTacToe(){
         setSymbole(symbole == 'X' ? 'O' : 'X');
 
         let check_test = check(field_id);
-        if(check_test) setWinning_fields(check_test);
+        
+        if(check_test) {
+            setWinning_fields(check_test);
+            setCanPlay(false);
+        }
     }
     
     return (
     <>
-        <div className="TicTacToe">
+        <div className="TicTacToe appear">
         {
             Fields.map((element, index) => (
                 winning_fields.includes(index)
@@ -107,7 +119,7 @@ export default function TicTacToe(){
             ))
         }
         </div>
-        <button onClick={reset}>Reset</button>
+        <Button winning_fields={winning_fields} func={reset} />
     </>
     )
 }

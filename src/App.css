@@ -187,3 +187,19 @@ body{
     border-right-color: var(--border);
   }
 }
+
+.assignments_list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 100px;
+}
+
+.assignments_list > div{
+  height: 25vh;
+  width: 20vw;
+  background-color: black;
+}
+
+.x {
+  
+}

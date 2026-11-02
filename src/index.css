@@ -51,14 +51,14 @@
 }
 
 #root {
-  width: 1126px;
+  width: 100vw;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -67,11 +67,12 @@ body {
 }
 
 .main {
-  width: 100%;
+  margin-top: 15vh;
+  width: 80vw;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
@@ -98,7 +99,7 @@ code {
 
 .grid{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
 }
 
@@ -135,7 +136,6 @@ code {
   background-color: #656565;
 }
 .TicTacToe {
-  
 
   display: grid;
   grid-template-columns: 100px 100px 100px;
@@ -149,10 +149,6 @@ code {
   display: flex;
   align-items: center;
   border: 2px solid gray;
-}
-
-.field > h1{
- 
 }
 button {
   background-image: linear-gradient(rgb(122, 122, 122), rgb(69, 69, 69));
@@ -168,4 +164,74 @@ button:hover{
 }
 button:active{
   transform: scale(1.2);
+}
+
+nav{
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  background-color: #7820bc;
+  border-bottom: 9px solid rgb(83, 11, 138);
+  height: 10vh;
+  width: 100vw;
+}
+nav > div:first-child{
+  font-size: 40px;
+  margin: 0;
+  width: 5em;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 5px black;
+}
+nav > div:first-child > h1{
+  height: inherit;
+  display: flex;
+  align-items: center;
+
+  width: 10vw;
+  font-size: 1.5em;
+  text-align: left;
+  padding-left: 1em;
+
+  transition: all 0.2s;
+}
+nav > div:first-child > h1:hover{
+  transform: scale(1.2);
+}
+nav > div:nth-child(2) > h1{
+  font-size: 40px;
+  text-shadow: 0 0 15px rgb(33, 33, 33);
+}
+.assignments_list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5em;
+  
+}
+.assignments_list > div{
+  border: 2px solid gray;
+  background-image: linear-gradient(rgb(106, 106, 106),rgb(83, 83, 83));
+  height: 0px;  
+  
+}
+.assignments_list > div > h1 {
+  height: 0;
+}
+.appear{
+  animation: appear 0.7s ease;
+}
+@keyframes appear {
+  0%{
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+  
+  90%{
+    opacity: 1;
+  }
+  100%{
+    
+    transform: translateY(0);
+  }
 }
