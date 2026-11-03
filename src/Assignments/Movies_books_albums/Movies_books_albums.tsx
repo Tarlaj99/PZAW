@@ -1,6 +1,6 @@
 import { useState, useRef, type Key, use, type ReactElement } from 'react';
-import { Voila_songs , Green_Day_songs} from './Album_songs.ts';
-import './App.css'
+import { Voila_songs , Green_Day_songs} from '../../Album_songs.ts';
+import '../../App.css'
 
 interface movie_props {
   img: string,

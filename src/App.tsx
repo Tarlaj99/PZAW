@@ -1,18 +1,17 @@
 import { useState, useEffect, type ReactNode,  } from "react";
-import Gallery from './Movies_books_albums.tsx';
-import TicTacToe from "./TicTacToe/TicTacToe.tsx";
-import Testing from "./Testing123.tsx";
-
+import Gallery from './Assignments/Movies_books_albums/Movies_books_albums.tsx';
+import TicTacToe from "./Assignments/TicTacToe/TicTacToe.tsx";
 import './App.css';
+import ToDoList from "./Assignments/ToDoList/ToDoList.tsx";
 
 const assignments: {name: string, comp: any, img?: string}[] = [
-  {name: 'Movies, books and albums gallery', comp: <Gallery />, img: './assets/TicTacToe.png'},
-  {name: 'Tic Tac Toe', comp: <TicTacToe />, img: './assets/TicTacToe.png'}
+  {name: 'Movies, books and albums gallery', comp: <Gallery />, img: './assets/imgTicTacToe.png'},
+  {name: 'Tic Tac Toe', comp: <TicTacToe />, img: './assets/imgTicTacToe.png'},
+  {name: 'To Do list', comp: <ToDoList />}
 ]
 
 function App() {
   const [currentAssignment, setCurrentAsignment] = useState<{comp: any, name: string}>(null);
-  
   function Main(){
     if(currentAssignment){
       return(
