@@ -1,10 +1,11 @@
 import { useState, useEffect, type ReactNode,  } from "react";
 import Gallery from './Movies_books_albums.tsx';
 import TicTacToe from "./TicTacToe/TicTacToe.tsx";
+import Testing from "./Testing123.tsx";
 
 import './App.css';
 
-const assignments: {name: string, comp: any, img: string}[] = [
+const assignments: {name: string, comp: any, img?: string}[] = [
   {name: 'Movies, books and albums gallery', comp: <Gallery />, img: './assets/TicTacToe.png'},
   {name: 'Tic Tac Toe', comp: <TicTacToe />, img: './assets/TicTacToe.png'}
 ]

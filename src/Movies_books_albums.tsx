@@ -70,7 +70,7 @@ function handleSongClick(title, song){
 
 export default function Gallery() {
 
-  const [movie_search, setMovie_search] =useState<string>('');
+  const [movie_search, setMovie_search] = useState<string>('');
   const [book_search, setBook_search] = useState<string>('');
   const [album_search, setAlbum_search] = useState<string>('');
 
@@ -131,12 +131,12 @@ export default function Gallery() {
     },
   ];
   return (
-  <>
+  <div className='appear'>
     <label htmlFor="movie-search">movie-search</label>
     <input type="text" id={'movie-search'} onChange={(event) => setMovie_search(event.target.value)}/>
-    <div className='grid appear'>
+    <div className='grid'>
       {
-        movies.filter((movie) => movie.title.toLowerCase().includes(movie_search.toLowerCase())).map((e) => (
+        movies.filter((movie) =>  movie.title.toLowerCase().includes(movie_search.toLowerCase())).map((e) => (
           <Movie title={e.title} date={e.date} img={e.img}/>
         ))
       }
@@ -144,7 +144,7 @@ export default function Gallery() {
 
     <label htmlFor="book-search">book-search</label>
     <input type="text" id={'book-search'} onChange={(event) => setBook_search(event.target.value)}/>
-    <div className="grid appear">
+    <div className="grid">
       {
         books.filter((book) => book.title.toLowerCase().includes(book_search.toLowerCase())).map((e) => (
           <Book cover={e.cover} title={e.title} year={e.year} pages={e.pages}/>
@@ -160,6 +160,6 @@ export default function Gallery() {
         ))
       }
     </div>
-  </>
+  </div>
   )
 }

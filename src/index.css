@@ -179,6 +179,9 @@ nav{
   height: 10vh;
   width: 100vw;
 }
+nav > div {
+  
+}
 nav > div:first-child{
   font-size: 40px;
   margin: 0;
@@ -216,8 +219,7 @@ nav > div:nth-child(2) > h1{
 .assignments_list > div{
   border: 2px solid gray;
   background-image: linear-gradient(rgb(106, 106, 106),rgb(83, 83, 83));
-  height: 0px;  
-  
+  height: 0px;
 }
 .assignments_list > div > h1 {
   height: 0;
