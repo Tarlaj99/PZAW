@@ -1,10 +1,18 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
-function Test(){
-    const [count, setCount] = useState(0);
+export default function Test(){
+    let [x,setX] = useState<number>(0);
+    const refreshes = useRef(0);
 
+    const input = useRef(null);
+    useEffect(() => {
+        refreshes.current += 1
+    })
     return(
-        <button onClick={() => setCount(count + 1)}>{count}</button>
+    <>
+        <input type="text" ref={input} />
+        <h1>{refreshes.current}</h1>
+        <button onClick={() => input.current.focus()}>{x}</button>
+    </>
     )
 }
-export default Test

@@ -113,7 +113,7 @@ export default function TicTacToe(){
             Fields.map((element, index) => (
                 winning_fields.includes(index)
                 ? 
-                <Field id={index} func={handleField} text={element} style={{backgroundColor: 'rgb(24, 172, 24)'}}/>
+                <Field id={index} func={handleField} text={element} style={{color: 'rgb(0,255,0)', textShadow: ' 0 0 10px rgb(0,255,0)'}}/>
                 :
                 <Field id={index} func={handleField} text={element}/>
             ))

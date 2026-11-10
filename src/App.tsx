@@ -1,13 +1,16 @@
 import { useState, useEffect, type ReactNode,  } from "react";
 import Gallery from './Assignments/Movies_books_albums/Movies_books_albums.tsx';
 import TicTacToe from "./Assignments/TicTacToe/TicTacToe.tsx";
+
 import './App.css';
 import ToDoList from "./Assignments/ToDoList/ToDoList.tsx";
+import Test from "./test.tsx";
 
 const assignments: {name: string, comp: any, img?: string}[] = [
   {name: 'Movies, books and albums gallery', comp: <Gallery />, img: './assets/imgTicTacToe.png'},
   {name: 'Tic Tac Toe', comp: <TicTacToe />, img: './assets/imgTicTacToe.png'},
-  {name: 'To Do list', comp: <ToDoList />}
+  {name: 'To Do list', comp: <ToDoList />},
+  {name: 'Test', comp: <Test />}
 ]
 
 function App() {
@@ -58,6 +61,7 @@ function App() {
   }
   return (
     <>
+    <img src={'./assets/imgTicTacToe.png'} alt="" />
       <Nav />
       <Main/>
     </>
